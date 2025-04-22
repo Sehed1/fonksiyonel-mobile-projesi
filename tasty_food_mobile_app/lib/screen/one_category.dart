@@ -8,7 +8,7 @@ class Burger extends StatelessWidget {
 
   final List<ItemModel> items = const [
     ItemModel(
-        image: 'assets/images/food_1.png',
+        image: 'assets/images/food_13.png',
         price: '12.99',
         rating: '4.8',
         title: 'Classic Burger'),
@@ -60,13 +60,13 @@ class Burger extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.amber,
         elevation: 0,
-        title: const Text('Fodd'),
+        title: const Text('Category'),
       ),
       body: GridView.builder(
           itemCount: items.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: 0.82,
+            childAspectRatio: 0.77,
           ),
           itemBuilder: (context, index) {
             return FoodItemCard(

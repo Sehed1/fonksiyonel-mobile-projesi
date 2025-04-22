@@ -25,8 +25,11 @@ class FoodItemCard extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(15),
-                child: Image.asset(item.image,
-                    width: double.infinity, fit: BoxFit.cover),
+                child: Image.asset(
+                  item.image,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
               ),
               const Positioned(
                 top: 8,

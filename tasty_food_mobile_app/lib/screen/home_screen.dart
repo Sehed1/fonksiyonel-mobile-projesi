@@ -1,9 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tasty_food_mobile_app/screen/extra_card_screen.dart';
+import 'package:tasty_food_mobile_app/screen/order_screen.dart';
+import 'package:tasty_food_mobile_app/screen/cart_scren.dart';
+import 'package:tasty_food_mobile_app/screen/food_home_screen.dart';
 import 'package:tasty_food_mobile_app/screen/login_screen.dart';
 import 'package:tasty_food_mobile_app/screen/register_screen.dart';
 
-import 'burgrer.dart';
+import 'one_category.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -41,7 +45,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 40),
-                // Sign up button
+                // Sign up  Screen
                 ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -54,15 +58,15 @@ class HomeScreen extends StatelessWidget {
                     backgroundColor: Color(0xFFFF8300),
                   ),
                   child: const Text(
-                    'Hesap Oluştur',
+                    'Sign Up',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
-                // Login button
+                const SizedBox(height: 10),
+                // Login  Screen
                 ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -83,9 +87,8 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-
-                const SizedBox(height: 20),
-                // Login button
+                const SizedBox(height: 10),
+                // Food Menu Screen
                 ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -94,11 +97,12 @@ class HomeScreen extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
-                    backgroundColor: Color(0xFFFF8300),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 50),
+                    backgroundColor: const Color(0xFFFF8300),
                   ),
                   child: const Text(
-                    'Burger',
+                    'Category',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -106,8 +110,74 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-
-                const SizedBox(height: 40),
+                const SizedBox(height: 10),
+                // Order screen
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MyCartScreen()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
+                    backgroundColor: Color(0xFFFF8300),
+                  ),
+                  child: const Text(
+                    'My Cart',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                // Food Home
+                const SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => FoodHomeScreen()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 50),
+                    backgroundColor: const Color(0xFFFF8300),
+                  ),
+                  child: const Text(
+                    'Food Home',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => AddBankCardScreen()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 50),
+                    backgroundColor: const Color(0xFFFF8300),
+                  ),
+                  child: const Text(
+                    'Extra card',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
