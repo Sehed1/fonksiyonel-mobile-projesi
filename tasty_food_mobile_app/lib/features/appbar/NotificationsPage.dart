@@ -1,16 +1,23 @@
+// ignore: file_names
+// ignore: file_names
+// ignore: file_names
+// ignore: file_names
+// ignore: file_names
 import 'package:flutter/material.dart';
 
 class NotificationsPage extends StatelessWidget {
+  const NotificationsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFFF3E0),
+      backgroundColor: const Color(0xFFFFF3E0),
       appBar: AppBar(
         backgroundColor: Colors.orange,
-        title: Text('Notifications'),
+        title: const Text('Notifications'),
       ),
       body: ListView(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         children: const [
           Card(
             child: ListTile(

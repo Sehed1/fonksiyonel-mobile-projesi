@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tasty_food_mobile_app/features/cart/cart_provider.dart';
-import 'package:tasty_food_mobile_app/features/welcome/welcome_screen.dart';
+import 'package:tasty_food_mobile_app/features/food_home/food_home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.orange,
         ),
-        home: const WelcomeScreen(),
+        home: const FoodHomeScreen(),
       ),
     );
   }

@@ -1,8 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _RegisterScreenState createState() => _RegisterScreenState();
 }
 
@@ -25,8 +27,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Register'),
-        backgroundColor: Color(0xFFFF8300),
+        title: const Text('Register'),
+        backgroundColor: const Color(0xFFFF8300),
         elevation: 0,
       ),
       body: Padding(
@@ -35,7 +37,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Title Text
-            Text(
+            const Text(
               'Create a new account',
               style: TextStyle(
                 fontSize: 32,
@@ -43,7 +45,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 color: Colors.black,
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Text(
               'Please create new account',
               style: TextStyle(
@@ -51,31 +53,31 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 color: Colors.grey[600],
               ),
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
 
             // Full Name TextField
             TextField(
               controller: nameCtrl,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Full name',
                 hintText: 'Enter your full name',
                 prefixIcon: Icon(Icons.person),
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Email TextField
             TextField(
               controller: emailCtrl,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Email Address',
                 hintText: 'Enter your email',
                 prefixIcon: Icon(Icons.email),
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Password TextField
             TextField(
@@ -84,17 +86,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
               decoration: InputDecoration(
                 labelText: 'Password',
                 hintText: 'Enter your password',
-                prefixIcon: Icon(Icons.lock),
+                prefixIcon: const Icon(Icons.lock),
                 suffixIcon: IconButton(
                   icon: Icon(
                     _obscurePass ? Icons.visibility_off : Icons.visibility,
                   ),
                   onPressed: _togglePass,
                 ),
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Register Button
             ElevatedButton(
@@ -102,11 +104,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 // Handle the register logic here
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFFFF8300), // Orange color
-                padding: EdgeInsets.symmetric(vertical: 15),
-                minimumSize: Size(double.infinity, 50), // Full-width button
+                backgroundColor: const Color(0xFFFF8300), // Orange color
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                minimumSize:
+                    const Size(double.infinity, 50), // Full-width button
               ),
-              child: Text(
+              child: const Text(
                 'Register',
                 style: TextStyle(
                   fontSize: 18,
@@ -115,7 +118,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Login Link
             Align(
@@ -124,7 +127,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 onPressed: () {
                   // Add navigation to login screen here
                 },
-                child: Text(
+                child: const Text(
                   "Have account? Login",
                   style: TextStyle(color: Color(0xFFFF8300)),
                 ),

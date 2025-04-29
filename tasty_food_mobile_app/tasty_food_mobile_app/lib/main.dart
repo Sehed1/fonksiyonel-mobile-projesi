@@ -5,6 +5,7 @@ void main() {
   runApp(MyApp());
 }
 
+// ignore: use_key_in_widget_constructors
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/', // Initial route is set to '/'
       routes: {
-        '/': (context) => HomeScreen(),
+        '/': (context) => const HomeScreen(),
       },
     );
   }

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _LoginScreenState createState() => _LoginScreenState();
 }
 
@@ -23,8 +26,8 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
-        backgroundColor: Color(0xFFFF8300),
+        title: const Text('Login'),
+        backgroundColor: const Color(0xFFFF8300),
         elevation: 0,
       ),
       body: Padding(
@@ -33,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Title Text
-            Text(
+            const Text(
               'Login to your account.',
               style: TextStyle(
                 fontSize: 32,
@@ -41,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 color: Colors.black,
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Text(
               'Please sign in to your account',
               style: TextStyle(
@@ -49,19 +52,19 @@ class _LoginScreenState extends State<LoginScreen> {
                 color: Colors.grey[600],
               ),
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
 
             // Email TextField
             TextField(
               controller: emailController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Email Address',
                 hintText: 'Enter your email',
                 prefixIcon: Icon(Icons.email),
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Password TextField
             TextField(
@@ -70,17 +73,17 @@ class _LoginScreenState extends State<LoginScreen> {
               decoration: InputDecoration(
                 labelText: 'Password',
                 hintText: 'Enter your password',
-                prefixIcon: Icon(Icons.lock),
+                prefixIcon: const Icon(Icons.lock),
                 suffixIcon: IconButton(
                   icon: Icon(
                     _obscurePassword ? Icons.visibility_off : Icons.visibility,
                   ),
                   onPressed: _togglePasswordVisibility,
                 ),
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Forgot Password Link
             Align(
@@ -89,13 +92,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 onPressed: () {
                   // Add your forgot password functionality here
                 },
-                child: Text(
+                child: const Text(
                   'Forgot password?',
                   style: TextStyle(color: Color(0xFFFF8300)),
                 ),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
 
             // Sign In Button
             ElevatedButton(
@@ -103,11 +106,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 // Handle the login logic here
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFFFF8300), // Orange color
-                padding: EdgeInsets.symmetric(vertical: 15),
-                minimumSize: Size(double.infinity, 50), // Full-width button
+                backgroundColor: const Color(0xFFFF8300), // Orange color
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                minimumSize:
+                    const Size(double.infinity, 50), // Full-width button
               ),
-              child: Text(
+              child: const Text(
                 'Sign In',
                 style: TextStyle(
                   fontSize: 18,
@@ -116,7 +120,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Register Link
             Align(
@@ -125,7 +129,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 onPressed: () {
                   // Add navigation to registration screen here
                 },
-                child: Text(
+                child: const Text(
                   "Don't have an account? Register",
                   style: TextStyle(color: Colors.orange),
                 ),

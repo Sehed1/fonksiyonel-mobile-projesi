@@ -9,6 +9,8 @@ import 'package:tasty_food_mobile_app/features/item/item_screen.dart';
 import '../burger/burger_screen.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,8 +31,9 @@ class HomeScreen extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
-                    backgroundColor: Color(0xFFFF8300),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 50),
+                    backgroundColor: const Color(0xFFFF8300),
                   ),
                   child: const Text(
                     'Register',
@@ -47,12 +50,14 @@ class HomeScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => LoginScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const LoginScreen()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
-                    backgroundColor: Color(0xFFFF8300),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 50),
+                    backgroundColor: const Color(0xFFFF8300),
                   ),
                   child: const Text(
                     'Login',
@@ -70,7 +75,8 @@ class HomeScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => BurgerScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const BurgerScreen()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -95,13 +101,14 @@ class HomeScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => OrderScreen(),
+                        builder: (context) => const OrderScreen(),
                       ),
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
-                    backgroundColor: Color(0xFFFF8300),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 50),
+                    backgroundColor: const Color(0xFFFF8300),
                   ),
                   child: const Text(
                     'My Order',
@@ -120,7 +127,7 @@ class HomeScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => OrderScreen(),
+                        builder: (context) => const OrderScreen(),
                       ),
                     );
                   },
@@ -145,7 +152,8 @@ class HomeScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SelectBankCard()),
+                      MaterialPageRoute(
+                          builder: (context) => const SelectBankCard()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -170,7 +178,7 @@ class HomeScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => DeliveryInfoScreen()),
+                          builder: (context) => const DeliveryInfoScreen()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -218,7 +226,8 @@ class HomeScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => FoodItemScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const FoodItemScreen()),
                     );
                   },
                   style: ElevatedButton.styleFrom(

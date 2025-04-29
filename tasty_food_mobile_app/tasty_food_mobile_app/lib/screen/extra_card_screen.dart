@@ -4,6 +4,7 @@ class AddBankCardScreen extends StatefulWidget {
   const AddBankCardScreen({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _AddBankCardScreenState createState() => _AddBankCardScreenState();
 }
 
@@ -16,20 +17,20 @@ class _AddBankCardScreenState extends State<AddBankCardScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
-        title: Text('Bank Card'),
+        title: const Text('Bank Card'),
         centerTitle: true,
         actions: [
           IconButton(
-            icon: Icon(Icons.delete, color: Colors.red),
+            icon: const Icon(Icons.delete, color: Colors.red),
             onPressed: () {
               // Placeholder for delete action
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('Delete action triggered')),
+                const SnackBar(content: Text('Delete action triggered')),
               );
             },
           ),
@@ -45,7 +46,7 @@ class _AddBankCardScreenState extends State<AddBankCardScreen> {
               width: double.infinity,
               height: 200,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                   colors: [Colors.orange, Color(0xFFFFA726)],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
@@ -57,7 +58,7 @@ class _AddBankCardScreenState extends State<AddBankCardScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       'Visa Card',
                       style: TextStyle(
                         color: Colors.white,
@@ -65,11 +66,11 @@ class _AddBankCardScreenState extends State<AddBankCardScreen> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
+                        const Text(
                           '•••• •••• •••• 8374',
                           style: TextStyle(
                             color: Colors.white,
@@ -85,6 +86,7 @@ class _AddBankCardScreenState extends State<AddBankCardScreen> {
                               height: 40,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
+                                // ignore: deprecated_member_use
                                 color: Colors.white.withOpacity(0.5),
                               ),
                             ),
@@ -95,6 +97,7 @@ class _AddBankCardScreenState extends State<AddBankCardScreen> {
                                 height: 40,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
+                                  // ignore: deprecated_member_use
                                   color: Colors.white.withOpacity(0.3),
                                 ),
                               ),
@@ -103,8 +106,8 @@ class _AddBankCardScreenState extends State<AddBankCardScreen> {
                         ),
                       ],
                     ),
-                    Spacer(),
-                    Row(
+                    const Spacer(),
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
@@ -151,16 +154,16 @@ class _AddBankCardScreenState extends State<AddBankCardScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // Credit Card Section
-            Text(
+            const Text(
               'Credit Card',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             // MasterCard Option
             _buildPaymentOption(
               icon: Icons.credit_card,
@@ -174,7 +177,7 @@ class _AddBankCardScreenState extends State<AddBankCardScreen> {
                 });
               },
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             // PayPal Option
             _buildPaymentOption(
               icon: Icons.payment,
@@ -188,7 +191,7 @@ class _AddBankCardScreenState extends State<AddBankCardScreen> {
                 });
               },
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             // Apple Pay Option
             _buildPaymentOption(
               icon: Icons.apple,
@@ -202,7 +205,7 @@ class _AddBankCardScreenState extends State<AddBankCardScreen> {
                 });
               },
             ),
-            Spacer(),
+            const Spacer(),
             // Add New Card Button
             SizedBox(
               width: double.infinity,
@@ -210,17 +213,18 @@ class _AddBankCardScreenState extends State<AddBankCardScreen> {
                 onPressed: () {
                   // Placeholder for adding a new card
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Add New Card action triggered')),
+                    const SnackBar(
+                        content: Text('Add New Card action triggered')),
                   );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.orange,
-                  padding: EdgeInsets.symmetric(vertical: 16),
+                  padding: const EdgeInsets.symmetric(vertical: 16),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
                 ),
-                child: Text(
+                child: const Text(
                   'Add New Card',
                   style: TextStyle(
                     color: Colors.white,
@@ -247,10 +251,10 @@ class _AddBankCardScreenState extends State<AddBankCardScreen> {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         decoration: BoxDecoration(
           border: Border.all(
-            color: isSelected ? Color(0xFFFFA726) : Colors.grey.shade300,
+            color: isSelected ? const Color(0xFFFFA726) : Colors.grey.shade300,
             width: 2,
           ),
           borderRadius: BorderRadius.circular(10),
@@ -258,22 +262,22 @@ class _AddBankCardScreenState extends State<AddBankCardScreen> {
         child: Row(
           children: [
             Icon(icon, color: Colors.black54),
-            SizedBox(width: 16),
+            const SizedBox(width: 16),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     title,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 4),
+                  const SizedBox(height: 4),
                   Text(
                     number,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.grey,
                       fontSize: 14,
                     ),
@@ -284,7 +288,7 @@ class _AddBankCardScreenState extends State<AddBankCardScreen> {
             // Placeholder for logo
             Text(
               logo,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
                 color: Colors.black54,

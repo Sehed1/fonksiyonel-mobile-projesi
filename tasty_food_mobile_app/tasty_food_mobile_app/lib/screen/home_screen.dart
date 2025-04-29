@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tasty_food_mobile_app/screen/extra_card_screen.dart';
 import 'package:tasty_food_mobile_app/screen/order_screen.dart';
-import 'package:tasty_food_mobile_app/screen/cart_scren.dart';
 import 'package:tasty_food_mobile_app/screen/food_home_screen.dart';
 import 'package:tasty_food_mobile_app/screen/login_screen.dart';
 import 'package:tasty_food_mobile_app/screen/register_screen.dart';
@@ -10,6 +8,8 @@ import 'package:tasty_food_mobile_app/screen/register_screen.dart';
 import 'one_category.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,12 +50,14 @@ class HomeScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => RegisterScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const RegisterScreen()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
-                    backgroundColor: Color(0xFFFF8300),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 50),
+                    backgroundColor: const Color(0xFFFF8300),
                   ),
                   child: const Text(
                     'Sign Up',
@@ -71,12 +73,14 @@ class HomeScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => LoginScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const LoginScreen()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
-                    backgroundColor: Color(0xFFFF8300),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 50),
+                    backgroundColor: const Color(0xFFFF8300),
                   ),
                   child: const Text(
                     'Giriş',
@@ -93,7 +97,7 @@ class HomeScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Burger()),
+                      MaterialPageRoute(builder: (context) => const Burger()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -116,12 +120,14 @@ class HomeScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => MyCartScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const MyCartScreen()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
-                    backgroundColor: Color(0xFFFF8300),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 50),
+                    backgroundColor: const Color(0xFFFF8300),
                   ),
                   child: const Text(
                     'My Cart',
@@ -138,7 +144,8 @@ class HomeScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => FoodHomeScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const FoodHomeScreen()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -161,7 +168,7 @@ class HomeScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => AddBankCardScreen()),
+                          builder: (context) => const AddBankCardScreen()),
                     );
                   },
                   style: ElevatedButton.styleFrom(

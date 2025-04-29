@@ -1,13 +1,17 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: CartScreen(),
     );
@@ -15,7 +19,10 @@ class MyApp extends StatelessWidget {
 }
 
 class CartScreen extends StatefulWidget {
+  const CartScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _CartScreenState createState() => _CartScreenState();
 }
 
@@ -28,14 +35,14 @@ class _CartScreenState extends State<CartScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {},
         ),
-        title: Text('My Cart'),
+        title: const Text('My Cart'),
         centerTitle: true,
         actions: [
           IconButton(
-            icon: Icon(Icons.more_horiz),
+            icon: const Icon(Icons.more_horiz),
             onPressed: () {},
           ),
         ],
@@ -54,7 +61,7 @@ class _CartScreenState extends State<CartScreen> {
                       decoration: InputDecoration(
                         hintText: 'Promo Code...',
                         prefixIcon:
-                            Icon(Icons.local_offer, color: Colors.orange),
+                            const Icon(Icons.local_offer, color: Colors.orange),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(25),
                           borderSide: BorderSide(color: Colors.grey.shade300),
@@ -65,12 +72,12 @@ class _CartScreenState extends State<CartScreen> {
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(25),
-                          borderSide: BorderSide(color: Colors.orange),
+                          borderSide: const BorderSide(color: Colors.orange),
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
@@ -78,17 +85,17 @@ class _CartScreenState extends State<CartScreen> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(25),
                       ),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 15),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Apply',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               // Cart Items
               _buildCartItem(
                 name: 'Burger With Meat',
@@ -108,7 +115,7 @@ class _CartScreenState extends State<CartScreen> {
                 },
                 onDelete: () {},
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               _buildCartItem(
                 name: 'Burger With Meat',
                 price: '\$12,230',
@@ -127,7 +134,7 @@ class _CartScreenState extends State<CartScreen> {
                 },
                 onDelete: () {},
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               // Payment Summary
               Card(
                 elevation: 2,
@@ -139,28 +146,28 @@ class _CartScreenState extends State<CartScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         'PAYMENT SUMMARY',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                         ),
                       ),
-                      SizedBox(height: 16),
+                      const SizedBox(height: 16),
                       _buildSummaryRow('TOTAL ITEMS (3)', '\$48,900'),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       _buildSummaryRow('DELIVERY FEE', 'Free',
                           valueColor: Colors.green),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       _buildSummaryRow('DISCOUNT', '-\$10,900',
                           valueColor: Colors.red),
-                      Divider(),
+                      const Divider(),
                       _buildSummaryRow('TOTAL', '\$38,000', isTotal: true),
                     ],
                   ),
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               // Order Now Button
               SizedBox(
                 width: double.infinity,
@@ -168,17 +175,17 @@ class _CartScreenState extends State<CartScreen> {
                   onPressed: () {
                     // Handle order submission
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('Order Placed!')),
+                      const SnackBar(content: Text('Order Placed!')),
                     );
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.orange,
-                    padding: EdgeInsets.symmetric(vertical: 16),
+                    padding: const EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(25),
                     ),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Order Now',
                     style: TextStyle(
                       color: Colors.white,
@@ -195,19 +202,19 @@ class _CartScreenState extends State<CartScreen> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 1, // Cart is selected
         items: [
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart),
             label: 'Cart',
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.chat),
             label: 'Chat',
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Profile',
           ),
@@ -252,9 +259,9 @@ class _CartScreenState extends State<CartScreen> {
                 color: Colors.grey.shade200,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Center(child: Text('Image')),
+              child: const Center(child: Text('Image')),
             ),
-            SizedBox(width: 16),
+            const SizedBox(width: 16),
             // Item Details
             Expanded(
               child: Column(
@@ -262,11 +269,11 @@ class _CartScreenState extends State<CartScreen> {
                 children: [
                   Text(
                     name,
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                   Text(
                     price,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.orange, fontWeight: FontWeight.bold),
                   ),
                 ],
@@ -276,19 +283,19 @@ class _CartScreenState extends State<CartScreen> {
             Row(
               children: [
                 IconButton(
-                  icon: Icon(Icons.remove_circle_outline),
+                  icon: const Icon(Icons.remove_circle_outline),
                   onPressed: onDecrease,
                 ),
                 Text('$quantity'),
                 IconButton(
-                  icon: Icon(Icons.add_circle_outline),
+                  icon: const Icon(Icons.add_circle_outline),
                   onPressed: onIncrease,
                 ),
               ],
             ),
             // Delete Button
             IconButton(
-              icon: Icon(Icons.delete, color: Colors.red),
+              icon: const Icon(Icons.delete, color: Colors.red),
               onPressed: onDelete,
             ),
           ],

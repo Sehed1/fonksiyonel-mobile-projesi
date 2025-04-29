@@ -8,7 +8,8 @@ class CartItemWidget extends StatelessWidget {
   final VoidCallback onIncrease;
   final VoidCallback onDelete;
 
-  CartItemWidget({
+  const CartItemWidget({
+    super.key,
     required this.name,
     required this.price,
     required this.quantity,
@@ -40,16 +41,17 @@ class CartItemWidget extends StatelessWidget {
                 color: Colors.grey.shade200,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Center(child: Text('Image')),
+              child: const Center(child: Text('Image')),
             ),
-            SizedBox(width: 16),
+            const SizedBox(width: 16),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(name, style: TextStyle(fontWeight: FontWeight.bold)),
+                  Text(name,
+                      style: const TextStyle(fontWeight: FontWeight.bold)),
                   Text(price,
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Colors.orange, fontWeight: FontWeight.bold)),
                 ],
               ),
@@ -57,18 +59,18 @@ class CartItemWidget extends StatelessWidget {
             Row(
               children: [
                 IconButton(
-                  icon: Icon(Icons.remove_circle_outline),
+                  icon: const Icon(Icons.remove_circle_outline),
                   onPressed: onDecrease,
                 ),
                 Text('$quantity'),
                 IconButton(
-                  icon: Icon(Icons.add_circle_outline),
+                  icon: const Icon(Icons.add_circle_outline),
                   onPressed: onIncrease,
                 ),
               ],
             ),
             IconButton(
-              icon: Icon(Icons.delete, color: Colors.red),
+              icon: const Icon(Icons.delete, color: Colors.red),
               onPressed: onDelete,
             ),
           ],

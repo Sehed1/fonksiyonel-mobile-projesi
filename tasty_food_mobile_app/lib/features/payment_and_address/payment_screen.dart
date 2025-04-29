@@ -2,21 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:tasty_food_mobile_app/features/home_screen/home_screen.dart';
 
 class PaymentScreen extends StatelessWidget {
+  const PaymentScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Payment And Address"),
+        title: const Text("Payment And Address"),
         centerTitle: true,
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => HomeScreen()),
+              MaterialPageRoute(builder: (context) => const HomeScreen()),
             );
           },
         ),
@@ -28,23 +30,23 @@ class PaymentScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("You deserve better meal",
+                const Text("You deserve better meal",
                     style: TextStyle(color: Colors.grey)),
-                SizedBox(height: 20),
-                Text("Item Ordered",
+                const SizedBox(height: 20),
+                const Text("Item Ordered",
                     style:
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 ListTile(
                   leading: Image.asset('assets/images/food_30.png'),
-                  title: Text("Burger With Meat",
+                  title: const Text("Burger With Meat",
                       style: TextStyle(fontWeight: FontWeight.bold)),
-                  subtitle: Text("14 items"),
-                  trailing: Text("\$ 12,230",
+                  subtitle: const Text("14 items"),
+                  trailing: const Text("\$ 12,230",
                       style: TextStyle(
                           color: Colors.orange, fontWeight: FontWeight.bold)),
                 ),
-                SizedBox(height: 20),
-                Text("Details Transaction",
+                const SizedBox(height: 20),
+                const Text("Details Transaction",
                     style:
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 _buildTransactionRow("Cherry Healthy", "\$ 180.000"),
@@ -52,8 +54,8 @@ class PaymentScreen extends StatelessWidget {
                 _buildTransactionRow("Tax 10%", "\$ 80.390"),
                 _buildTransactionRow("Total Price", "\$ 100.000",
                     isTotal: true),
-                Divider(height: 40),
-                Text("Deliver to :",
+                const Divider(height: 40),
+                const Text("Deliver to :",
                     style:
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 _buildDeliveryInfo("Name", "Albert Stevano"),
@@ -61,12 +63,13 @@ class PaymentScreen extends StatelessWidget {
                 _buildDeliveryInfo("Address", "New York"),
                 _buildDeliveryInfo("House No.", "BC54 Berlin"),
                 _buildDeliveryInfo("City", "New York City"),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Center(
                   child: ElevatedButton(
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text("Checkout process started")),
+                        const SnackBar(
+                            content: Text("Checkout process started")),
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -74,10 +77,10 @@ class PaymentScreen extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                       ),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 100, vertical: 15),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 100, vertical: 15),
                     ),
-                    child: Text("Checkout Now",
+                    child: const Text("Checkout Now",
                         style: TextStyle(fontSize: 16, color: Colors.white)),
                   ),
                 )
@@ -115,8 +118,8 @@ class PaymentScreen extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(label, style: TextStyle(color: Colors.grey)),
-          Text(info, style: TextStyle(fontWeight: FontWeight.w500)),
+          Text(label, style: const TextStyle(color: Colors.grey)),
+          Text(info, style: const TextStyle(fontWeight: FontWeight.w500)),
         ],
       ),
     );

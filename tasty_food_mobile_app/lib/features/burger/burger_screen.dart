@@ -7,7 +7,7 @@ class BurgerScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final items = BurgerModel.items;
+    const items = BurgerModel.items;
 
     return Scaffold(
       appBar: AppBar(

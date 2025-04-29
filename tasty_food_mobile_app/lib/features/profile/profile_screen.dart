@@ -27,10 +27,11 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFFFF3E0),
       appBar: AppBar(
         title: const Text(
-          'Profile Screen',
-          style: TextStyle(color: Colors.white, fontSize: 30),
+          'Profile ',
+          style: TextStyle(color: Colors.black, fontSize: 30),
         ),
         backgroundColor: Colors.orange,
       ),
@@ -61,31 +62,28 @@ class ProfileScreen extends StatelessWidget {
                         style: const TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
-                          color: Colors.orange,
+                          color: Colors.black54,
                         ),
                       ),
                       const SizedBox(height: 8),
                       Text(
                         'Email: $email',
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 16,
-                          color: Colors.orange[700],
+                          color: Colors.black54,
                         ),
                       ),
                       const SizedBox(height: 8),
                       Text(
                         'Phone: $phone',
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 16,
-                          color: Colors.orange[700],
+                          color: Colors.black54,
                         ),
                       ),
                       const SizedBox(height: 16),
                     ],
                   ),
-                ),
-                const Expanded(
-                  child: Center(child: Text('This is the profile screen')),
                 ),
               ],
             );

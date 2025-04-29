@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tasty_food_mobile_app/features/appbar/NotificationsPage.dart';
-import 'package:tasty_food_mobile_app/features/food_detail/food_detail_screen.dart'
-    show FoodDetailScreen;
+import 'package:tasty_food_mobile_app/features/chat/chat_screen.dart';
+import 'package:tasty_food_mobile_app/features/food_detail/food_detail_screen.dart';
 import 'package:tasty_food_mobile_app/features/order/order_screen.dart';
 import 'package:tasty_food_mobile_app/features/profile/profile_screen.dart';
 
@@ -28,6 +28,7 @@ class FoodHomeScreen extends StatefulWidget {
   const FoodHomeScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _FoodHomeScreenState createState() => _FoodHomeScreenState();
 }
 
@@ -87,54 +88,59 @@ class _FoodHomeScreenState extends State<FoodHomeScreen> {
     ),
 // Sweets
     FoodItemModel(
-      name: 'Chicken Soft Taco',
+      name: 'Berry cake ',
       imagePath: 'assets/images/food_19.png',
       rating: 4.7,
       price: 12.490,
       category: 'Sweet',
-      description:
-          'Soft tortilla filled with grilled chicken, lettuce, and creamy sauce.',
+      description: 'A round, frosted cake topped with fresh blackberries.',
     ),
     FoodItemModel(
-      name: 'Beef Crunchy Taco',
+      name: 'Cheesecake Slice',
       imagePath: 'assets/images/food_20.png',
       rating: 4.8,
       price: 13.750,
       category: 'Sweet',
-      description: 'Crispy taco shell with seasoned beef and cheddar cheese.',
+      description:
+          'A creamy cheesecake topped with a vibrant fruit layer and edible flowers',
     ),
     FoodItemModel(
-      name: 'Fish Taco',
+      name: 'Meringue Dessert',
       imagePath: 'assets/images/food_10.png',
       rating: 4.6,
       price: 14.290,
       category: 'Sweet',
-      description: 'Grilled fish with cabbage slaw and lime crema.',
+      description:
+          'A light dessert with crisp meringue, ice cream, and sweet fruit accents.',
     ),
     FoodItemModel(
-      name: 'Shrimp Taco',
+      name: 'Panna Cotta',
       imagePath: 'assets/images/food_11.png',
       rating: 4.9,
       price: 15.990,
       category: 'Sweet',
-      description: 'Sautéed shrimp with avocado and spicy mayo.',
+      description:
+          'Creamy panna cotta served in jars with fresh strawberry topping.',
     ),
     FoodItemModel(
-      name: 'Veggie Taco',
-      imagePath: 'assets/images/food_16.png',
+      name: 'Ice Cream Sundae',
+      imagePath: 'assets/images/food_12.png',
       rating: 4.5,
       price: 11.990,
       category: 'Sweet',
-      description: 'Soft taco with roasted vegetables and guacamole.',
+      description:
+          'A bowl of ice cream scoops with colorful sprinkles in an edible sprinkle-coated bowl.',
     ),
     FoodItemModel(
-      name: 'Spicy Pork Taco',
+      name: 'Cupcake and Meringues',
       imagePath: 'assets/images/food_17.png',
       rating: 4.8,
       price: 13.490,
       category: 'Sweet',
-      description: 'Pulled pork with spicy salsa and pickled onions.',
+      description:
+          ' A cupcake topped with pink frosting and a cherry, alongside meringue shapes on a baking tray.',
     ),
+
 // Pizzas
     FoodItemModel(
       name: 'Margherita Pizza',
@@ -187,7 +193,7 @@ class _FoodHomeScreenState extends State<FoodHomeScreen> {
 // Drinks
     FoodItemModel(
       name: 'Cola Classic',
-      imagePath: 'assets/images/food_49.jpeg',
+      imagePath: 'assets/images/food_61.jpeg',
       rating: 4.6,
       price: 3.990,
       category: 'Drink',
@@ -259,7 +265,7 @@ class _FoodHomeScreenState extends State<FoodHomeScreen> {
       case 1:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => OrderScreen()),
+          MaterialPageRoute(builder: (context) => const OrderScreen()),
         );
         break;
       case 2:
@@ -280,11 +286,11 @@ class _FoodHomeScreenState extends State<FoodHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFFF3E0),
+      backgroundColor: const Color(0xFFFFF3E0),
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Food Menu',
-          style: TextStyle(color: Colors.white, fontSize: 36),
+          style: TextStyle(color: Colors.black, fontSize: 36),
         ),
         backgroundColor: Colors.orange,
         automaticallyImplyLeading: false,
@@ -299,7 +305,8 @@ class _FoodHomeScreenState extends State<FoodHomeScreen> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => NotificationsPage()),
+                MaterialPageRoute(
+                    builder: (context) => const NotificationsPage()),
               );
             },
           ),
@@ -473,14 +480,14 @@ class _FoodHomeScreenState extends State<FoodHomeScreen> {
                     fit: BoxFit.cover,
                   ),
                 ),
-                Positioned(
-                  top: 8,
-                  right: 8,
+                /* Positioned(
+                  top: 2,
+                  right: 2,
                   child: IconButton(
                     icon: const Icon(Icons.favorite_border, color: Colors.red),
                     onPressed: () {},
                   ),
-                ),
+                ),*/
               ],
             ),
             Padding(
@@ -533,20 +540,3 @@ class _FoodHomeScreenState extends State<FoodHomeScreen> {
     );
   }
 }
-
-// Chat Screen
-class ChatScreen extends StatelessWidget {
-  const ChatScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Chat Screen'),
-      ),
-      body: const Center(child: Text('This is the chat screen')),
-    );
-  }
-}
-
-// Profile Screen

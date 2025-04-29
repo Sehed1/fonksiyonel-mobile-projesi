@@ -9,9 +9,11 @@ class OrderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // ignore: prefer_const_constructors
+      backgroundColor: Color(0xFFFFF3E0),
       appBar: AppBar(
         title: const Text('My Order'),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.orange,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
