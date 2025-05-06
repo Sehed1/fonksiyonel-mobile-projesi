@@ -242,7 +242,7 @@ class _FoodHomeScreenState extends State<FoodHomeScreen> {
   ];
 
   int _selectedIndex = 0;
-  String _selectedCategory = 'Pizza';
+  String _selectedCategory = 'Burger';
 
   void _onCategorySelected(String category) {
     setState(() {
